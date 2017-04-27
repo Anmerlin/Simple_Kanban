@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="simplyKanban">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.min.css">
+  <link rel="stylesheet" href="css/kanban.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+
+<body ng-cloak>
+  <header>
+    <div class="row">
+      <h1 class="app-name left">Simply Kanban</h1>
+    </div>
+  </header>
+
+  <section id="lists-container"
+           class="lists-container"
+           ng-controller="listsCtrl as listsCtrl">
+
+    <div class="row">
+      <section class="list list-inline"
+               ng-repeat="list in listsCtrl.lists"
+               ng-controller="listCtrl as listCtrl">
+        <h2>List: {{list.listName}}</h2>
+
+        <div class="card"
+             ng-controller="cardCtrl as cardCtrl"
+             ng-repeat="card in listCtrl.getCards(list)">
+
+          <div ng-if="!cardCtrl.isEditing">
+            {{card.description}}
+            <div ng-click="cardCtrl.editCard(card)"
+                 class="edit-small edit-card hand">
+				 <i class="fa fa-pencil" aria-hidden="true"></i>
+            </div>
+            <div ng-click="cardCtrl.deleteCard(card)"
+                 class="remove-small remove-card hand">
+				 <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div ng-if="cardCtrl.isEditing">
+            <form ng-submit="cardCtrl.updateCard()">
+              <input type="text"
+                     close-editing
+                     is-editing="cardCtrl.isEditing"
+                     ng-model="cardCtrl.editingCard.description">
+            </form>
+          </div>
+
+        </div>
+
+        <a ng-click="listCtrl.removeList(list)" class="hand">
+          <div class="remove remove-list">
+		  	<i class="fa fa-times" aria-hidden="true"></i>
+		  </div>
+        </a>
+
+        <section class="new-card">
+          <form ng-submit="listCtrl.createCard(list)">
+            <input type="text"
+                   ng-model="listCtrl.cardDescription"
+                   class="card-input"
+                   placeholder="New card">
+          </form>
+        </section>
+
+      </section>
+
+      <section class="list new-list list-inline">
+	  <h2>Create new list</h2>
+        <form ng-submit="listsCtrl.addList()">
+          <input type="text" ng-model="listsCtrl.listName">
+        </form>
+      </section>
+
+    </div>
+
+
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/factories/listFactory.js"></script>
+  <script src="js/factories/cardFactory.js"></script>
+  <script src="js/controllers/listsCtrl.js"></script>
+  <script src="js/controllers/listCtrl.js"></script>
+  <script src="js/controllers/cardCtrl.js"></script>
+  <script src="js/directives/closeEditing.js"></script>
+</body>
+</html>

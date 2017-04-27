@@ -1,0 +1,153 @@
+/* Basic styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+header {
+    background-color: #48a000;
+    color: #fff;
+    margin: 0;
+    padding: .2em;
+    overflow: hidden;
+}
+
+input {
+    border-radius: 4px;
+}
+
+
+/* End basic syles */
+
+.app-name {
+    font-family: "Verdana";
+    color: #fff;
+    font-weight: 500;
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    text-indent: .5em;
+}
+
+.list {
+    width: 200px;
+    background-color: #e3e3e3;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #999;
+    vertical-align: top;
+    position: relative;
+    margin: 5px;
+}
+
+.list h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.list input {
+    margin-bottom: 0;
+}
+
+.list.new-list {
+    background-color: #3b94c3;
+}
+
+.list-inline {
+    display: inline-block;
+}
+
+.lists-container {
+    padding: 20px;
+    position: relative;
+}
+
+.remove {
+    font-size: 22px;
+}
+
+.remove:hover {
+    color: #fff;
+}
+
+.remove-small,
+.edit-small {
+    font-size: 14px;
+}
+
+.remove:hover,
+.remove-small:hover {
+    color: #c60f13;
+}
+
+.edit-small:hover {
+    color: #4fb100;
+}
+
+.remove-list {
+    position: absolute;
+    margin: 6px;
+    font-family: Helvetica, Arial, Sans-Serif;
+    top: 5px;
+    right: 5px;
+    font-weight: 700;
+    color: #205c7e;
+}
+
+.remove-card {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
+.no-display {
+    display: none;
+}
+
+.card {
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 4px;
+    margin: 10px 0;
+    border: 1px solid #b9b9b9;
+    position: relative;
+}
+
+.edit-card {
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: 20px;
+}
+
+.card:hover {
+    border-color: #205c7e;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+input.search {
+    width: 200px;
+    margin-top: 4px;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.header-link {
+    color: #FFF;
+    vertical-align: middle;
+}
+
+.header-link:hover {
+    color: #e3e3e3;
+}
+
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+    display: none;
+}
