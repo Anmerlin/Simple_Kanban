@@ -33,7 +33,7 @@ input {
 
 .list {
     width: 200px;
-    background-color: #e3e3e3;
+    background-color: #a3f064;
     border-radius: 4px;
     padding: 10px;
     border: 1px solid #999;
@@ -64,12 +64,19 @@ input {
     position: relative;
 }
 
-.remove {
-    font-size: 22px;
+span[sv-handle] {
+    position: relative;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    cursor: move;
 }
 
-.remove:hover {
-    color: #fff;
+.edit {
+    font-size: 20px;
+}
+
+.remove {
+    font-size: 22px;
 }
 
 .remove-small,
@@ -82,8 +89,19 @@ input {
     color: #c60f13;
 }
 
+.edit:hover,
 .edit-small:hover {
     color: #4fb100;
+}
+
+.edit-list {
+    position: absolute;
+    margin: 6px;
+    font-family: Helvetica, Arial, Sans-Serif;
+    top: 5px;
+    right: 25px;
+    font-weight: 700;
+    color: #205c7e;
 }
 
 .remove-list {
