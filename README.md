@@ -9,9 +9,9 @@ Required functionality:
   
   - Working with lists of cards:
     - Creating named lists of cards; +
-    - Editing card list names;
+    - Editing card list names; +
     - Delete card lists (along with cards); +
-    - Change the order of lists using drag and drop.
+    - Change the order of lists using drag and drop. +
     
   - Working with cards:
     - Creating cards with text; +
